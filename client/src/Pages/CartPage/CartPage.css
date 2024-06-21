@@ -1,0 +1,13 @@
+.CartPage {
+  min-height: 786px;
+  background-color: #fefae0;
+}
+
+.CartPage .cart-page-heading {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-page-heading h2 {
+  font-size: 32px;
+}

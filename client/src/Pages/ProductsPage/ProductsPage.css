@@ -1,0 +1,24 @@
+.ProductsPage {
+  min-height: max-content;
+  background-color: #fefae0;
+  padding: 40px;
+}
+
+.input-div {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.products-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.no-products {
+  font-weight: 700;
+  font-size: 42px;
+  padding-top: 50px;
+}

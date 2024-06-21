@@ -1,0 +1,17 @@
+.ProductsDetailsPage {
+  display: grid;
+  place-items: center;
+  background-color: #fefae0;
+}
+
+.page-details-heading {
+  padding-left: 30px;
+  font-size: 24px;
+  margin: 0;
+}
+
+.page-content {
+  display: grid;
+  place-items: center;
+  margin-top: 0;
+}

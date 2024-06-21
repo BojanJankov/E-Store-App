@@ -1,0 +1,20 @@
+.ErrorPages {
+  display: grid;
+  place-items: center;
+  min-height: 700px;
+}
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-message h1 {
+  font-size: 52px;
+}
+
+.error-message {
+  cursor: pointer;
+}

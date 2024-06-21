@@ -1,0 +1,72 @@
+.ProductCard {
+  border: 2px solid #bc6c25;
+  padding: 20px;
+  border-radius: 4px;
+  background: #ffffff;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: 0.2s;
+  min-height: 250px;
+  font-size: 18px;
+}
+
+.ProductCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.2);
+}
+
+.ProductCard .card-info {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  width: 220px;
+  gap: 10px;
+}
+
+.ProductCard .heading {
+  font-size: 20px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  text-align: center;
+  height: 85px;
+}
+
+.ProductCard .price {
+  font-size: 20px;
+  border: 1px solid #bc6c25;
+  background-color: #fefae0;
+  padding: 10px 5px;
+  border-radius: 4px;
+  width: 80px;
+  display: grid;
+  place-items: center;
+}
+
+.img-container-card {
+  height: 200px;
+  width: 220px;
+  display: flex;
+  justify-content: center;
+}
+
+.ProductCard .buttons-div {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ProductCard .addToCartBtn {
+  font-size: 20px;
+  width: 60px;
+  border: 1px solid #bc6c25;
+  background-color: #fefae0;
+  padding: 10px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ProductCard .addToCartBtn:hover {
+  background-color: lightgreen;
+}

@@ -1,0 +1,29 @@
+.CartList {
+  list-style: none;
+  border-radius: 3px;
+  font-size: 20px;
+  background-color: #606c38;
+  width: 70%;
+  margin: 15px;
+  padding: 0;
+  padding: 15px 20px;
+}
+
+.CartList-heading {
+  background-color: #606c38;
+  width: 70%;
+  border-radius: 3px;
+  text-align: center;
+  padding: 20px;
+  font-size: 26px;
+}
+
+.total-price {
+  border-top: 1px solid #283618;
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
