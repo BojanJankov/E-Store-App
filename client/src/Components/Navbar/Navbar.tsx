@@ -19,6 +19,10 @@ function Navbar() {
       text: "Products",
     },
     {
+      path: "/add-product",
+      text: "Add products",
+    },
+    {
       path: "/about",
       text: "About Us",
     },
