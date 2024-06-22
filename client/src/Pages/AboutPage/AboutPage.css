@@ -1,4 +1,33 @@
 .AboutPage {
   min-height: 786px;
   background-color: #fefae0;
+  display: grid;
+  place-content: center;
+}
+
+.about-container {
+  width: 1000px;
+  background-color: #606c38;
+  border-radius: 10px;
+  height: 600px;
+  display: grid;
+
+  grid-template-rows: max-content 1fr;
+}
+
+.heading-about-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  font-size: 24px;
+}
+
+.paragraph-container {
+  padding: 0 50px;
+}
+
+.paragraph-container p {
+  color: black;
+  font-size: 18px;
+  text-align: left;
 }

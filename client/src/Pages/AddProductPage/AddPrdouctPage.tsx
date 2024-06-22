@@ -18,7 +18,7 @@ function AddProductPage() {
     handleSubmit,
     reset,
     watch,
-    formState: { isValid, isSubmitted, isDirty },
+    formState: { isValid, isSubmitted },
   } = useForm<FormValues>({
     defaultValues: {
       title: "",
