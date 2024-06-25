@@ -98,7 +98,7 @@ function AddProductPage() {
             type="text"
             {...register("price", {
               required: { value: true, message: "Price is required" },
-              min: 0,
+              min: { value: 0, message: "Value must be a greater than 0" },
               max: 10000,
             })}
             placeholder="Price"
@@ -107,8 +107,11 @@ function AddProductPage() {
             type="text"
             {...register("rating", {
               required: { value: true, message: "Rating is required" },
-              min: 0,
-              max: 5,
+              min: { value: 0, message: "Value must be a greater than 0" },
+              max: {
+                value: 0,
+                message: "Value must be a less or equal than 5",
+              },
             })}
             placeholder="Rating (0-5)"
           />
@@ -116,7 +119,7 @@ function AddProductPage() {
             type="text"
             {...register("stock", {
               required: { value: true, message: "Stock is required" },
-              min: 0,
+              min: { value: 0, message: "Value must be a greater than 0" },
               max: 100,
             })}
             placeholder="Stock"

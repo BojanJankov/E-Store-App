@@ -55,7 +55,6 @@ export const ProductProvider = ({ children }: any) => {
       return prevProducts.map((product) => {
         if (product.id === selectedProduct.id) {
           return { ...product, inCart: true, quantity: 1 };
-          return product;
         } else {
           return product;
         }
