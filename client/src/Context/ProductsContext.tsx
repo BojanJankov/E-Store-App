@@ -10,6 +10,8 @@ interface ContextType {
   getProductsInCart: () => Product[];
   addQuntity: (selectedProduct: Product) => void;
   removeQuntity: (selectedProduct: Product) => void;
+  fetchProducts: () => void;
+  resetCart: () => void;
 }
 
 const ProductContext = createContext<ContextType>({
@@ -19,9 +21,10 @@ const ProductContext = createContext<ContextType>({
   getProductsInCart() {
     return [];
   },
-
   addQuntity() {},
   removeQuntity() {},
+  fetchProducts() {},
+  resetCart() {},
 });
 
 export const ProductProvider = ({ children }: any) => {
@@ -49,6 +52,16 @@ export const ProductProvider = ({ children }: any) => {
   useEffect(() => {
     fetchProducts();
   }, []);
+
+  const resetCart = () => {
+    setProducts((prev) => {
+      return prev.map((product) => ({
+        ...product,
+        quantity: 0,
+        inCart: false,
+      }));
+    });
+  };
 
   const addToCart = (selectedProduct: Product) => {
     setProducts((prevProducts) => {
@@ -122,6 +135,8 @@ export const ProductProvider = ({ children }: any) => {
       <ProductContext.Provider
         value={{
           products,
+          fetchProducts,
+          resetCart,
           addToCart,
           removeFromCart,
           getProductsInCart,

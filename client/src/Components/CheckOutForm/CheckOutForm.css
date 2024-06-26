@@ -1,0 +1,19 @@
+.CheckoutForm {
+  margin-top: 50px;
+  width: 79%;
+  height: 150px;
+  padding: 5px;
+  background-color: #606c38;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.CheckoutForm .form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  width: 100%;
+  margin-top: 30px;
+  gap: 10px;
+  padding-left: 10px;
+}

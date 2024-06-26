@@ -1,0 +1,20 @@
+.CheckOutPage {
+  display: grid;
+  height: 600px;
+  place-content: center;
+  grid-template-rows: 10% 90%;
+}
+
+.CheckOutPage h1 {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 30px 0;
+  font-size: 30px;
+}
+
+.CheckOutContainer {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}

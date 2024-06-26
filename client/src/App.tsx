@@ -10,6 +10,7 @@ import ErrorPages from "./Pages/ErrorPages/ErrorPages";
 import HomePage from "./Pages/HomePage/HomePage";
 import CartPage from "./Pages/CartPage/CartPage";
 import AddProductPage from "./Pages/AddProductPage/AddPrdouctPage";
+import CheckOutPage from "./Pages/CheckoutPage/CheckOutPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<CheckOutPage />} />
           <Route path="*" element={<ErrorPages />} />
         </Routes>
       </main>

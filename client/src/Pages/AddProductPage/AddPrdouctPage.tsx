@@ -1,6 +1,9 @@
 import { useForm } from "react-hook-form";
 import "./AddProductPage.css";
 import { api } from "../../services/api";
+import { useContext } from "react";
+import ProductContext from "../../Context/ProductsContext";
+import { useNavigate } from "react-router-dom";
 
 interface FormValues {
   title: string;
@@ -13,6 +16,8 @@ interface FormValues {
 }
 
 function AddProductPage() {
+  const { fetchProducts } = useContext(ProductContext);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -42,12 +47,18 @@ function AddProductPage() {
       category: data.category,
     };
 
-    const response = await api.post("products", values, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-    });
-    const jsonData = await response.data;
-    console.log(jsonData);
+    try {
+      const response = await api.post("products", values, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+      });
+      const jsonData = await response.data;
+      console.log(jsonData);
+      fetchProducts();
+      navigate("/products");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const watchImage = watch("image");
@@ -109,7 +120,7 @@ function AddProductPage() {
               required: { value: true, message: "Rating is required" },
               min: { value: 0, message: "Value must be a greater than 0" },
               max: {
-                value: 0,
+                value: 5,
                 message: "Value must be a less or equal than 5",
               },
             })}
@@ -155,9 +166,6 @@ function AddProductPage() {
             alt="Product image"
             width="300px"
           />
-          {isValid && isSubmitted && (
-            <div className="form-added-div">Your product is added!</div>
-          )}
         </div>
       </form>
     </section>

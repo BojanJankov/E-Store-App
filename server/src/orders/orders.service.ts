@@ -45,6 +45,7 @@ export class OrdersService {
         address: orderData.address,
         date: orderData.date,
         fullName: orderData.fullName,
+        phoneNumber: orderData.phoneNumber,
       });
 
       const createdDetails = await tem

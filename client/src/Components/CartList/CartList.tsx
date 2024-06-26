@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Product } from "../../Models/product.model";
 import CartItem from "../CartItem/CartItem";
 import "./CartList.css";
@@ -13,6 +14,7 @@ function CartList({
   removeFromCart,
   showToastMessage,
 }: CartListProps) {
+  const navigate = useNavigate();
   return (
     <>
       {cartProducts.length > 0 ? (
@@ -33,6 +35,14 @@ function CartList({
                 0
               )
               .toFixed(2)}
+            <button
+              className="checkout-button"
+              onClick={() => {
+                navigate("/checkout");
+              }}
+            >
+              Checkout
+            </button>
           </div>
         </ol>
       ) : (
