@@ -1,6 +1,6 @@
 .CheckoutForm {
   margin-top: 50px;
-  width: 79%;
+  width: 80%;
   height: 150px;
   padding: 5px;
   background-color: #606c38;
@@ -13,7 +13,18 @@
   grid-template-columns: 1fr 1fr;
   margin: 0;
   width: 100%;
-  margin-top: 30px;
   gap: 10px;
-  padding-left: 10px;
+}
+
+.CheckoutForm .form-group {
+  padding-top: 10px;
+  padding-left: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group input {
+  width: 250px;
+  height: 25px;
 }

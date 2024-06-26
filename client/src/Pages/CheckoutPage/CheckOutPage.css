@@ -14,7 +14,7 @@
 }
 
 .CheckOutContainer {
-  width: 100%;
+  width: 1000px;
   display: grid;
   place-items: center;
 }

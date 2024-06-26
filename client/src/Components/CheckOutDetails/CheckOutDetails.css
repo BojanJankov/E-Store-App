@@ -1,7 +1,7 @@
 .CheckoutDetails {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 81%;
   font-size: 18px;
 }
 
@@ -30,15 +30,15 @@
 
 .CheckoutDetails .total {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   margin-left: 75px;
-  width: 500px;
+  width: 735px;
 }
 
 .CheckoutDetails .total-list {
   border-radius: 5px;
   background-color: #606c38;
-  width: 50%;
+  width: 40%;
   padding: 20px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
