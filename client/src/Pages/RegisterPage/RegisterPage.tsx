@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import "./RegisterPage.css";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
+import { toast } from "react-toastify";
 
 interface RegisterFormValues {
   firstName: string;
@@ -25,9 +26,11 @@ function RegisterPage() {
       const response = await api.post("/auth/register", body);
 
       console.log(response);
+      toast.success("You successfully create an account!");
       navigate("/login");
     } catch (error) {
       console.log(error);
+      toast.error("Invalid register, try again!");
     }
   };
   return (

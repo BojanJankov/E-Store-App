@@ -5,8 +5,7 @@ import ProductContext from "../../Context/ProductsContext";
 import SearchInput from "../../Components/SearchInput/SearchInput";
 import { Product } from "../../Models/product.model";
 import { useSearchParams } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 function ProductsPage() {
   const { products, addToCart } = useContext(ProductContext);
@@ -64,7 +63,6 @@ function ProductsPage() {
           <div className="no-products">No products found!</div>
         )}
       </div>
-      <ToastContainer />
     </section>
   );
 }

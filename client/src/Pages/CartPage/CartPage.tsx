@@ -2,8 +2,7 @@ import { useContext } from "react";
 import CartList from "../../Components/CartList/CartList";
 import "./CartPage.css";
 import ProductContext from "../../Context/ProductsContext";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 function CartPage() {
   const { getProductsInCart, removeFromCart } = useContext(ProductContext);
@@ -27,7 +26,6 @@ function CartPage() {
           showToastMessage={showToastMessage}
         />
       </div>
-      <ToastContainer />
     </section>
   );
 }

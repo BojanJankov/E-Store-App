@@ -3,6 +3,7 @@ import "./LoginPage.css";
 import { AuthContext } from "../../Context/AuthContext";
 import { api } from "../../services/api";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -29,16 +30,19 @@ function LoginPage() {
 
       login(accessToken);
       navigate(-1);
+      toast.success("You are successfully log in!");
     } catch (error) {
       console.log(error);
       setEmail("");
       setPassword("");
+      toast.error("Invalid credentails, try again!");
     }
   };
 
   const removeAccessToken = () => {
     logout();
     localStorage.clear();
+    toast.success("You are logout now!");
     window.location.reload();
   };
 
