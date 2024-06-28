@@ -1,4 +1,119 @@
 .ContactPage {
-  min-height: 786px;
+  display: grid;
+  place-items: center;
+  min-height: 600px;
   background-color: #fefae0;
+}
+
+.ContactPageContainer {
+  background-color: #606c38;
+  width: 850px;
+  height: 400px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+.ContactInfoDiv h3 {
+  font-weight: 700;
+  font-size: 24px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.form-container {
+  position: relative;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.form-container .row50 {
+  display: flex;
+  gap: 20px;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 50%;
+}
+
+.form-container .row100 .inputBox {
+  width: 100%;
+}
+
+.inputBox span {
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.inputBox input {
+  padding: 10px;
+  width: 200px;
+  height: 25px;
+  font-size: 1.1em;
+  outline: none;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+.inputBox textarea {
+  padding: 5px;
+  width: 470px;
+  font-size: 1.1em;
+  outline: none;
+  border: 1px solid #333;
+  resize: none;
+  min-height: 100px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.send-button {
+  height: 150px;
+  width: 200px;
+  margin-bottom: 0;
+}
+
+.send-button button {
+  cursor: pointer;
+  border: 1px solid black;
+
+  border-radius: 5px;
+}
+
+.send-button button:hover {
+  background-color: #606c38;
+  transform: translateX(2px);
+  border: 1px solid black;
+}
+
+.ContactAppInformations {
+  padding: 20px;
+  text-align: left;
+  margin-top: 50px;
+  text-align: center;
+}
+.ContactAppInformations div {
+  margin-bottom: 50px;
+}
+.ContactAppInformations div span {
+  font-size: 18px;
+  font-weight: 600;
+}
+.ContactAppInformations div p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.MessageParagraph {
+  position: absolute;
+  bottom: 60px;
+}
+
+.hidden {
+  visibility: hidden;
 }

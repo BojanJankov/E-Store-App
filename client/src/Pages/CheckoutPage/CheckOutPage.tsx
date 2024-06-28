@@ -3,10 +3,11 @@ import "./CheckOutPage.css";
 import { AddOrder } from "../../Models/order.model";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import ProductContext from "../../Context/ProductsContext";
 import CheckOutForm from "../../Components/CheckOutForm/CheckOutForm";
 import CheckOutDetails from "../../Components/CheckOutDetails/CheckOutDetails";
+import { AuthContext } from "../../Context/AuthContext";
 
 export interface CheckoutFormValues {
   firstName: string;
@@ -16,8 +17,17 @@ export interface CheckoutFormValues {
 }
 
 function CheckOutPage() {
+  const { accessToken } = useContext(AuthContext);
   const { getProductsInCart, resetCart } = useContext(ProductContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      navigate("/login");
+    }, 2000);
+    return () => clearTimeout(timeOut);
+  }, [accessToken]);
+
   const form = useForm<CheckoutFormValues>({
     defaultValues: {
       firstName: "",
@@ -69,6 +79,15 @@ function CheckOutPage() {
       console.log(error);
     }
   };
+
+  if (accessToken === null) {
+    return (
+      <div className="forbiddenContainer">
+        <h1>You must be logged in before viewing this page!</h1>
+        <p>You'll be redirected in 2 seconds</p>
+      </div>
+    );
+  }
 
   return (
     <section className="CheckOutPage">

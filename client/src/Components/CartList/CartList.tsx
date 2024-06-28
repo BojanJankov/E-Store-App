@@ -15,6 +15,7 @@ function CartList({
   showToastMessage,
 }: CartListProps) {
   const navigate = useNavigate();
+
   return (
     <>
       {cartProducts.length > 0 ? (
@@ -37,9 +38,7 @@ function CartList({
               .toFixed(2)}
             <button
               className="checkout-button"
-              onClick={() => {
-                navigate("/checkout");
-              }}
+              onClick={() => [navigate("/checkout")]}
             >
               Checkout
             </button>

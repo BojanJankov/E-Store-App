@@ -11,6 +11,8 @@ import HomePage from "./Pages/HomePage/HomePage";
 import CartPage from "./Pages/CartPage/CartPage";
 import AddProductPage from "./Pages/AddProductPage/AddPrdouctPage";
 import CheckOutPage from "./Pages/CheckoutPage/CheckOutPage";
+import LoginPage from "./Pages/LoginPage/LoginPage";
+import RegisterPage from "./Pages/RegisterPage/RegisterPage";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<CheckOutPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="*" element={<ErrorPages />} />
         </Routes>
       </main>

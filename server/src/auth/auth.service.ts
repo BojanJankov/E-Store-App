@@ -1,7 +1,6 @@
 import {
   BadRequestException,
   Injectable,
-  NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
@@ -28,6 +27,8 @@ export class AuthService {
 
     const hashedPassword = await hash(registerDataFromUser.password, 8);
 
+    console.log('heshiran passsword', hashedPassword);
+
     registerDataFromUser.password = hashedPassword;
 
     await this.userService.createuser(registerDataFromUser);
@@ -37,6 +38,8 @@ export class AuthService {
     const foundUser = await this.userService.getUserByEmail(credentials.email);
 
     if (!foundUser) throw new UnauthorizedException('Invalid Credentials');
+
+    console.log(foundUser);
 
     const isPasswordValid = await compare(
       credentials.password,

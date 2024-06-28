@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
 import "./AddProductPage.css";
 import { api } from "../../services/api";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import ProductContext from "../../Context/ProductsContext";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthContext";
 
 interface FormValues {
   title: string;
@@ -16,6 +17,7 @@ interface FormValues {
 }
 
 function AddProductPage() {
+  const { accessToken } = useContext(AuthContext);
   const { fetchProducts } = useContext(ProductContext);
   const navigate = useNavigate();
   const {
@@ -35,6 +37,15 @@ function AddProductPage() {
       rating: "",
     },
   });
+
+  useEffect(() => {
+    if (accessToken === null) {
+      const timeOut = setTimeout(() => {
+        navigate("/login");
+      }, 2000);
+      return () => clearTimeout(timeOut);
+    }
+  }, [accessToken]);
 
   const onSubmitFetch = async (data: FormValues) => {
     const values = {
@@ -65,6 +76,15 @@ function AddProductPage() {
 
   const placeholderImage =
     "https://seetruetechnology.com/wp-content/uploads/2022/02/BG-7.jpg";
+
+  if (accessToken === null) {
+    return (
+      <div className="forbiddenContainer">
+        <h1>You must be logged in before viewing this page!</h1>
+        <p>You'll be redirected in 2 seconds</p>
+      </div>
+    );
+  }
 
   return (
     <section className="AddProductPage">

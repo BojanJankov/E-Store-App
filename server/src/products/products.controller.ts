@@ -13,6 +13,7 @@ import { ProductsService } from './products.service';
 import { CreateProductDto } from './dtos/create-product.dto';
 import { UpdateProductDto } from './dtos/update-product.dto';
 import { ProductFilters } from './interfaces/products-filters.interface';
+import { AuthGuard } from 'src/auth/auth.quard';
 
 @Controller('products')
 export class ProductsController {
@@ -43,6 +44,7 @@ export class ProductsController {
     return this.productsService.getProductOrders(Number(id));
   }
 
+  @UseGuards(AuthGuard)
   @Post()
   createProduct(@Body() productData: CreateProductDto) {
     return this.productsService.createProduct(productData);

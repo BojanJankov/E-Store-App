@@ -1,0 +1,31 @@
+.RegisterPage {
+  display: grid;
+  place-items: center;
+  height: 600px;
+}
+
+.register-form {
+  border: 1px solid #bc6c25;
+  border-radius: 10px;
+  width: 300px;
+  height: 350px;
+  background-color: aqua;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-button {
+  border-radius: 10px;
+  width: 100px;
+  border: 1px solid #bc6c25;
+  cursor: pointer;
+}

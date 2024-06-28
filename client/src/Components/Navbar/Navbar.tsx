@@ -5,8 +5,10 @@ import { useContext } from "react";
 import ProductContext from "../../Context/ProductsContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { AuthContext } from "../../Context/AuthContext";
 function Navbar() {
   const { getProductsInCart } = useContext(ProductContext);
+  const { accessToken } = useContext(AuthContext);
 
   const cartCount = getProductsInCart().length;
   const navLinks: NavLinkModel[] = [
@@ -31,6 +33,10 @@ function Navbar() {
       text: "Contact",
     },
     {
+      path: "/login",
+      text: "Login",
+    },
+    {
       path: "/cart",
       text: "Cart",
     },
@@ -41,7 +47,9 @@ function Navbar() {
         {navLinks.map((link, i) => (
           <li key={i}>
             <NavLink to={link.path}>
-              {link.text && link.text === "Cart" ? (
+              {accessToken !== null && link.text === "Login" ? (
+                "Logout"
+              ) : "Login" && link.text && link.text === "Cart" ? (
                 <FontAwesomeIcon icon={faCartShopping} className="cart-icon" />
               ) : (
                 link.text
